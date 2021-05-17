@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Script Tutorials" />
+    <title>Нестеров, Лобачёв КИ17-12Б</title>
+
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+
+    <script src="js/knockout-3.5.1.js"></script>
+
+</head>
+<body>
+
+    <div class="calculator">
+
+        <p>КАЛЬКУЛЯТОР Нестеров, Лобачёв</p>
+
+        <h3 data-bind="text: commandline"></h3>
+
+
+        <div data-bind="foreach: numbers" class="numbers">
+            <button data-bind="value: val, text: val, click: $parent.addNumber"></button>
+        </div>
+    </div>
+    <div class="calculator1">
+        <div data-bind="foreach: numbers1" class="numbers1">
+            <button data-bind="value: val, text: val, click: $parent.addNumber"></button>
+        </div>
+    </div>
+    <div class="calculator">
+        <div data-bind="foreach: commands" class="commands">
+            <button data-bind="value: command, text: command, click: $parent.addCommand, disable: $parent.hasNumbers"></button>
+        </div>
+
+        <button data-bind="click: doCalculate" style="width: 330px">=</button>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
